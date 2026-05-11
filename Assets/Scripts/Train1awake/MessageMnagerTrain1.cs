@@ -52,8 +52,6 @@ public class MessageManagerTrain1 : MonoBehaviour
         if (currentLine >= scenarioLoader.scenarioData.Count)
         {
             uiManager.ClearBubble();     
-            darkPanel.SetActive(true);   
-            statusGroup.SetActive(true); 
 
             return;
         }
@@ -69,6 +67,16 @@ public class MessageManagerTrain1 : MonoBehaviour
             currentLine++;
             ShowNextLine();
             return;
+        }
+
+        if(command == "CharMake")
+        {
+            uiManager.ClearBubble();
+            darkPanel.SetActive(true);   // 暗い背景を出す
+            statusGroup.SetActive(true); // ステータス画面を出す
+
+            return;
+
         }
 
         if (command == "Search")
